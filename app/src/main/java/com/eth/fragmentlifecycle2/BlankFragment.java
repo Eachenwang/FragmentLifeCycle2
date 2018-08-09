@@ -1,8 +1,11 @@
 package com.eth.fragmentlifecycle2;
 
 
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,13 +56,68 @@ public class BlankFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        Log.d("FRAG", "onCreate: ");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        Log.d("FRAG", "onCreateView: ");
         return inflater.inflate(R.layout.fragment_blank, container, false);
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        Log.d("FRAG", "onStart: ");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Log.d("FRAG", "onStop: ");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d("FRAG", "onResume: ");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d("FRAG", "onPause: ");
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Log.d("FRAG", "onActivityCreated: ");
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        Log.d("FRAG", "onDetach: ");
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        Log.d("FRAG", "onDestroyView: ");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d("FRAG", "onDestroy: ");
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        Log.d("FRAG", "onAttach: ");
+    }
 }
